@@ -8,7 +8,6 @@ const OPTIONS = {
   },
 };
 
-// Lấy phim theo search hoặc top phổ biến
 export const fetchMovies = async (query = "") => {
   const url = query
     ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
@@ -19,7 +18,6 @@ export const fetchMovies = async (query = "") => {
   return data.results || [];
 };
 
-// Lấy trending phim
 export const fetchTrending = async () => {
   const url = `${API_BASE_URL}/trending/movie/week`;
   const res = await fetch(url, OPTIONS);
